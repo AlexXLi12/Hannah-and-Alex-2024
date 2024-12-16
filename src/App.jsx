@@ -32,9 +32,9 @@ function App() {
 		<ScrapBook_Page
 			title="Hannah & Alex 2024"
 			images={[
-				"./src/assets/1stpage1.jpg",
-				"./src/assets/1stpage2.jpg",
-				"./src/assets/1stpage3.jpg",
+				"./assets/1stpage1.jpg",
+				"./assets/1stpage2.jpg",
+				"./assets/1stpage3.jpg",
 			]}
 			text="To our first holiday season together :)"
 			maxCount={maxCount}
@@ -42,9 +42,9 @@ function App() {
 		<ScrapBook_Page
 			title="Gasworks Park"
 			images={[
-				"./src/assets/gasworks1.jpg",
-				"./src/assets/gasworks2.jpg",
-				"./src/assets/gasworks3.jpg",
+				"./assets/gasworks1.jpg",
+				"./assets/gasworks2.jpg",
+				"./assets/gasworks3.jpg",
 			]}
 			text="One of our first dates"
 			maxCount={maxCount}
@@ -52,9 +52,9 @@ function App() {
 		<ScrapBook_Page
 			title="Medina Beach Park"
 			images={[
-				"./src/assets/medina1.jpg",
-				"./src/assets/medina2.jpg",
-				"./src/assets/medina3.jpg",
+				"./assets/medina1.jpg",
+				"./assets/medina2.jpg",
+				"./assets/medina3.jpg",
 			]}
 			text="Our spot this summer"
 			maxCount={maxCount}
@@ -62,9 +62,9 @@ function App() {
 		<ScrapBook_Page
 			title="Vancouver"
 			images={[
-				"./src/assets/vancouver1.jpg",
-				"./src/assets/vancouver2.jpg",
-				"./src/assets/vancouver3.jpg",
+				"./assets/vancouver1.jpg",
+				"./assets/vancouver2.jpg",
+				"./assets/vancouver3.jpg",
 			]}
 			text="Our first trip together"
 			maxCount={maxCount}
@@ -72,18 +72,18 @@ function App() {
 		<ScrapBook_Page
 			title="Halloween"
 			images={[
-				"./src/assets/halloween1.jpg",
-				"./src/assets/halloween2.jpg",
-				"./src/assets/halloween3.jpg",
+				"./assets/halloween1.jpg",
+				"./assets/halloween2.jpg",
+				"./assets/halloween3.jpg",
 			]}
 			text="Gay little monkey & banana"
 			maxCount={maxCount}
 		/>
 	];
 	const songList = [
-		"./src/assets/beginning_to_look_alot_like_christmas.mp3",
-		"./src/assets/all_i_want_for_christmas_is_you.mp3",
-		"./src/assets/last_christmas.mp3",
+		"./assets/beginning_to_look_alot_like_christmas.mp3",
+		"./assets/all_i_want_for_christmas_is_you.mp3",
+		"./assets/last_christmas.mp3",
 	];
 	return (
 		<div className="App">
