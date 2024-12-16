@@ -19,7 +19,6 @@ const ScrapBook_Page = ({ title, images, text, maxCount }) => {
 		} else if (lastDirection === "left") {
 			pageElement.setAttribute("class", "slide-in-left");
 		}
-		console.log(pageElement.classList);
 	}, [count]);
 
 	function handlePrev() {

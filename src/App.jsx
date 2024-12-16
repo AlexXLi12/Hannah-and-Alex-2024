@@ -27,7 +27,7 @@ function App() {
 		return () => clearInterval(interval);
 	}, []);
 
-	const maxCount = 3;
+	const maxCount = 4;
 	const pages = [
 		<ScrapBook_Page
 			title="Hannah & Alex 2024"
@@ -69,12 +69,26 @@ function App() {
 			text="Our first trip together"
 			maxCount={maxCount}
 		/>,
+		<ScrapBook_Page
+			title="Halloween"
+			images={[
+				"./src/assets/halloween1.jpg",
+				"./src/assets/halloween2.jpg",
+				"./src/assets/halloween3.jpg",
+			]}
+			text="Gay little monkey & banana"
+			maxCount={maxCount}
+		/>
 	];
-
+	const songList = [
+		"./src/assets/beginning_to_look_alot_like_christmas.mp3",
+		"./src/assets/all_i_want_for_christmas_is_you.mp3",
+		"./src/assets/last_christmas.mp3",
+	];
 	return (
 		<div className="App">
 			{pages[count]}
-			<AudioPlayer src="./src/assets/all_i_want_for_christmas_is_you.mp3" />
+			<AudioPlayer src={songList} />
 		</div>
 	);
 }
