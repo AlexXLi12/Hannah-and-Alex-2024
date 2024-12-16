@@ -1,7 +1,7 @@
 /* Import custom font */
 @font-face {
   font-family: 'CustomFont';
-  src: url('./assets/HolidayFree.otf') format('opentype');
+  src: url('/public/assets/HolidayFree.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
