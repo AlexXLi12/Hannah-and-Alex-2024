@@ -1,20 +1,40 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { GlobalStateContext } from "./GlobalStateContext";
 import "./ScrapBook_Page.css";
 
-function ScrapBook_Page({ title, images, text, count, maxCount, onPrev, onNext }) {
+function ScrapBook_Page({ title, images, text, maxCount }) {
+	const { count, setCount, lastDirection, setLastDirection } =
+		useContext(GlobalStateContext);
 
-    useEffect(() => {
-        document.getElementById("page").setAttribute("class", "slide-in");
-    })
-    
-    function handleNext() {
-        if (count !== maxCount) {
-            document.getElementById("page").setAttribute("class", "slide-out");
-            setTimeout(() => {
-                onNext();
-            }, 400);
-        }
-    }
+	useEffect(() => {
+		const pageElement = document.getElementById("page");
+		if (lastDirection === "right") {
+			pageElement.setAttribute("class", "slide-in-right");
+		} else if (lastDirection === "left") {
+			pageElement.setAttribute("class", "slide-in-left");
+		}
+		console.log(pageElement.classList);
+	}, [count]);
+
+	function handlePrev() {
+		if (count !== 0) {
+			document.getElementById("page").setAttribute("class", "slide-out-right");
+			setLastDirection("left");
+			setTimeout(() => {
+				setCount(count - 1);
+			}, 400);
+		}
+	}
+
+	function handleNext() {
+		if (count !== maxCount) {
+			document.getElementById("page").setAttribute("class", "slide-out-left");
+			setLastDirection("right");
+			setTimeout(() => {
+				setCount(count + 1);
+			}, 400);
+		}
+	}
 	return (
 		<>
 			<div className="page" id="page">
@@ -24,8 +44,10 @@ function ScrapBook_Page({ title, images, text, count, maxCount, onPrev, onNext }
 				))}
 				<p>{text}</p>
 				<div>
-					{count !== 0 && <button onClick={() => onPrev()}>&larr;</button>}
-					{count !== maxCount && <button onClick={() => handleNext()}>&rarr;</button>}
+					{count !== 0 && <button onClick={() => handlePrev()}>&larr;</button>}
+					{count !== maxCount && (
+						<button onClick={() => handleNext()}>&rarr;</button>
+					)}
 				</div>
 			</div>
 		</>
