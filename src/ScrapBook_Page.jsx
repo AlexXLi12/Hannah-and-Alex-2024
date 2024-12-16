@@ -2,9 +2,15 @@ import { useEffect, useContext } from "react";
 import { GlobalStateContext } from "./GlobalStateContext";
 import "./ScrapBook_Page.css";
 
-function ScrapBook_Page({ title, images, text, maxCount }) {
-	const { count, setCount, lastDirection, setLastDirection } =
-		useContext(GlobalStateContext);
+const ScrapBook_Page = ({ title, images, text, maxCount }) => {
+	const {
+		count,
+		setCount,
+		lastDirection,
+		setLastDirection,
+		interacted,
+		setInteracted,
+	} = useContext(GlobalStateContext);
 
 	useEffect(() => {
 		const pageElement = document.getElementById("page");
@@ -27,6 +33,9 @@ function ScrapBook_Page({ title, images, text, maxCount }) {
 	}
 
 	function handleNext() {
+		if (!interacted) {
+			setInteracted(true);
+		}
 		if (count !== maxCount) {
 			document.getElementById("page").setAttribute("class", "slide-out-left");
 			setLastDirection("right");
@@ -43,7 +52,12 @@ function ScrapBook_Page({ title, images, text, maxCount }) {
 			<div className="page" id="page">
 				<h1 className="title">{title}</h1>
 				{images.map((image, index) => (
-					<img className={rotateList[index]} key={index} src={image} alt="uh oh" />
+					<img
+						className={rotateList[index]}
+						key={index}
+						src={image}
+						alt="uh oh"
+					/>
 				))}
 				<p>{text}</p>
 				<div>
@@ -55,6 +69,6 @@ function ScrapBook_Page({ title, images, text, maxCount }) {
 			</div>
 		</>
 	);
-}
+};
 
 export default ScrapBook_Page;

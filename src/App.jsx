@@ -1,12 +1,12 @@
 import React, { useEffect, useContext } from "react";
 import ScrapBook_Page from "./ScrapBook_Page";
 import { GlobalStateContext } from "./GlobalStateContext";
+import AudioPlayer from "./AudioPlayer";
 import "./App.css";
 
 function App() {
 	const { count, setCount, _lastDirection, _setLastDirection } =
 		useContext(GlobalStateContext);
-
 	useEffect(() => {
 		const createSnowflake = () => {
 			const snowflake = document.createElement("div");
@@ -71,7 +71,12 @@ function App() {
 		/>,
 	];
 
-	return <div className="App">{pages[count]}</div>;
+	return (
+		<div className="App">
+			{pages[count]}
+			<AudioPlayer src="./src/assets/all_i_want_for_christmas_is_you.mp3" />
+		</div>
+	);
 }
 
 export default App;
