@@ -4,7 +4,8 @@ import { GlobalStateContext } from "./GlobalStateContext";
 import "./App.css";
 
 function App() {
-  const { count, setCount, lastDirection, setLastDirection } = useContext(GlobalStateContext);
+	const { count, setCount, _lastDirection, _setLastDirection } =
+		useContext(GlobalStateContext);
 
 	useEffect(() => {
 		const createSnowflake = () => {
@@ -16,8 +17,6 @@ function App() {
 			snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
 			document.body.appendChild(snowflake);
 
-			snowflake.offsetHeight;
-
 			setTimeout(() => {
 				snowflake.remove();
 			}, 5000);
@@ -28,16 +27,7 @@ function App() {
 		return () => clearInterval(interval);
 	}, []);
 
-	function handleNext() {
-		if (count !== pages.length - 1) setCount(count + 1);
-		console.log(count);
-	}
-
-	function handlePrev() {
-		if (count !== 0) setCount(count - 1);
-		console.log(count);
-	}
-	const maxCount = 1;
+	const maxCount = 3;
 	const pages = [
 		<ScrapBook_Page
 			title="Hannah & Alex 2024"
@@ -57,6 +47,26 @@ function App() {
 				"./src/assets/gasworks3.jpg",
 			]}
 			text="One of our first dates"
+			maxCount={maxCount}
+		/>,
+		<ScrapBook_Page
+			title="Medina Beach Park"
+			images={[
+				"./src/assets/medina1.jpg",
+				"./src/assets/medina2.jpg",
+				"./src/assets/medina3.jpg",
+			]}
+			text="Our spot this summer"
+			maxCount={maxCount}
+		/>,
+		<ScrapBook_Page
+			title="Vancouver"
+			images={[
+				"./src/assets/vancouver1.jpg",
+				"./src/assets/vancouver2.jpg",
+				"./src/assets/vancouver3.jpg",
+			]}
+			text="Our first trip together"
 			maxCount={maxCount}
 		/>,
 	];

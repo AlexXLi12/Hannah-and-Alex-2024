@@ -35,12 +35,15 @@ function ScrapBook_Page({ title, images, text, maxCount }) {
 			}, 400);
 		}
 	}
+
+	const rotateList = ["rotate-0", "rotate-1", "rotate-2"];
+
 	return (
 		<>
 			<div className="page" id="page">
 				<h1 className="title">{title}</h1>
 				{images.map((image, index) => (
-					<img key={index} src={image} alt="uh oh" />
+					<img className={rotateList[index]} key={index} src={image} alt="uh oh" />
 				))}
 				<p>{text}</p>
 				<div>
