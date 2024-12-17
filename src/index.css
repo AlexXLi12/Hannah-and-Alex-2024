@@ -13,6 +13,8 @@
 		transparent 100px,
 		transparent 200px
 	);
+	background-size: cover; /* Ensure the background covers the entire viewport */
+	background-attachment: fixed; /* Fix the background to the viewport */
 	height: 100vh; /* Adjust height */
 	width: 100%;
 
@@ -28,8 +30,14 @@ body {
 	place-items: center;
 	min-width: 320px;
 	min-height: 100vh;
-	overflow: hidden; /* Ensure snowflakes don't cause scrollbars */
+	overflow-x: hidden; /* Ensure snowflakes don't cause scrollbars */
 	position: relative; /* Required for absolute positioning of snowflakes */
+}
+
+@media (min-width: 1024px) {
+  body {
+    overflow-y: hidden; /* Hide vertical overflow on laptop devices */
+  }
 }
 
 h1 {

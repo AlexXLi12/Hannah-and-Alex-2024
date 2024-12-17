@@ -50,14 +50,16 @@ const ScrapBook_Page = ({ title, images, text, maxCount }) => {
 		<>
 			<div className="page" id="page">
 				<h1 className="title">{title}</h1>
-				{images.map((image, index) => (
-					<img
-						className={rotateList[index]}
-						key={index}
-						src={image}
-						alt="uh oh"
-					/>
-				))}
+				<div className="image-container">
+					{images.map((image, index) => (
+						<img
+							className={rotateList[index]}
+							key={index}
+							src={image}
+							alt="uh oh"
+						/>
+					))}
+				</div>
 				<p>{text}</p>
 				<div>
 					{count !== 0 && <button onClick={() => handlePrev()}>&larr;</button>}
