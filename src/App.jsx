@@ -27,7 +27,7 @@ function App() {
 		return () => clearInterval(interval);
 	}, []);
 
-	const maxCount = 4;
+	const maxCount = 5;
 	const pages = [
 		<ScrapBook_Page
 			title="Hannah & Alex 2024"
@@ -36,7 +36,7 @@ function App() {
 				"./assets/1stpage2.jpg",
 				"./assets/1stpage3.jpg",
 			]}
-			text="To our first holiday season together :)"
+			text="For our first holiday season together :)"
 			maxCount={maxCount}
 		/>,
 		<ScrapBook_Page
@@ -77,6 +77,16 @@ function App() {
 				"./assets/halloween3.jpg",
 			]}
 			text="Gay little monkey & banana"
+			maxCount={maxCount}
+		/>,
+		<ScrapBook_Page
+			title="Washington DC"
+			images={[
+				"./assets/dc1.jpg",
+				"./assets/dc2.jpg",
+				"./assets/dc3.jpg",
+			]}
+			text="Merry Christmas! Here's to many more <3"
 			maxCount={maxCount}
 		/>
 	];
