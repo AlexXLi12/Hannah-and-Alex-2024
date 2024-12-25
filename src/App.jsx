@@ -27,7 +27,7 @@ function App() {
 		return () => clearInterval(interval);
 	}, []);
 
-	const maxCount = 5;
+	const maxCount = 6;
 	const pages = [
 		<ScrapBook_Page
 			title="Hannah & Alex 2024"
@@ -86,9 +86,19 @@ function App() {
 				"./assets/dc2.jpg",
 				"./assets/dc3.jpg",
 			]}
+			text= "The Washington Monument and Lincoln Memorial"
+			maxCount={maxCount}
+		/>,
+		<ScrapBook_Page
+			title="Georgetown and Tysons"
+			images={[
+				"./assets/lastpage1.jpg",
+				"./assets/lastpage2.jpg",
+				"./assets/lastpage3.jpg",
+			]}
 			text="Merry Christmas! Here's to many more <3"
 			maxCount={maxCount}
-		/>
+		/>,
 	];
 	const songList = [
 		"./assets/beginning_to_look_alot_like_christmas.mp3",
